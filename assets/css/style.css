@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@500&display=swap');
+/*  font-family: 'Fredoka One', cursive;
+    font-family: 'Raleway', sans-serif;  */
+
+/* DIV FOR ENTIRE PROJECT */
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+    background-color: blanchedalmond;
+    border: 2px solid gray;
+    border-radius: 10px;
+    max-width: 600px;
+    height: 300px;
+}
+
+/* Heading "Rob's Password..... */
+h1 {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    width: 100%;
+    padding: 3px 0 30px 0;
+}
+
+/* PASSWORD PARAMETERS ie. lenght, numbers?, symbols? */
+
+
+/* GENERATED PASSWORD and COPY BUTTON */
+#password {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
