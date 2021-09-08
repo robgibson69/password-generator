@@ -5,9 +5,8 @@
     text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@500&display=swap');
-/*  font-family: 'Fredoka One', cursive;
-    font-family: 'Raleway', sans-serif;  */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+/*  font-family: 'Rubik', sans-serif;  */
 
 /* DIV FOR ENTIRE PROJECT */
 .main {
@@ -17,24 +16,69 @@
     background-color: blanchedalmond;
     border: 2px solid gray;
     border-radius: 10px;
-    max-width: 600px;
-    height: 300px;
+    max-width: 700px;
+    min-width: 376px;
+    /* height: 300px; */
+    font-family: 'Rubik', sans-serif;
+    font-size: 17px;
 }
 
 /* Heading "Rob's Password..... */
 h1 {
     text-align: center;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
     width: 100%;
-    padding: 3px 0 30px 0;
+    padding: 10px 0 30px 0;
 }
 
-/* PASSWORD PARAMETERS ie. lenght, numbers?, symbols? */
+/* PASSWORD PARAMETERS ie. length, numbers?, symbols? generate button  */
+#pass-settings {
+    padding: 20px;
+    justify-content: space-around;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+#pass-settings label {
+    margin: 5px 10px 5px 15px;
+}
+
+.generate {
+    margin: 0 auto 30px auto;
+}
 
 
 /* GENERATED PASSWORD and COPY BUTTON */
-#password {
+.password {
+    margin: auto;
     text-align: center;
-    margin: 0 0 20px 0;
+    padding-bottom: 20px;
+    margin: 0 0 10px 0;
+}
+
+#password-text {
+    width: 60%;
+}
+
+/*  BUTTONS AND INPUT BOXES  */
+input[type=button] {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 6px 22px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 17px;
+    background-color: white;
+    padding: 2px 4px 2px 4px;
 }
 
