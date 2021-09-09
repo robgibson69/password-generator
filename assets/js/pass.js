@@ -11,12 +11,12 @@ var length = document.getElementById("length");
 var includeNumbers = document.getElementById("numbers");
 var includeSymbols = document.getElementById("symbols");
 var btnGenerate = document.getElementById("generate-button");
-var butCopy = document.getElementById("copy");
+var btnCopy = document.getElementById("copy");
 var password = document.getElementById("password-text");
 
 // EVENT LISTENER FOR GENERATE PASSWORD BUTTON
 btnGenerate.addEventListener('click', function() {
-    console.log("alpha contains " + alpha);
+    password.value = ""
     setPasswordText();
 })
 
@@ -30,14 +30,22 @@ function setPasswordText() {
     password.value = generatePassword(length.value, pass_char);
 }
 
-function generatePassword(selectedLength, selectedCharacters) {
-    console.log(selectedLength + selectedCharacters  + password.value)
+function generatePassword(length, characters) {
     
-    for (let i = 0; i < selectedLength; i++) {
-    password.value += selectedCharacters.charAt(Math.floor(Math.random() * selectedLength));
+    for (var i = 0; i < length; i++) {
+    password.value += characters.charAt(Math.floor(Math.random() * characters.length));
     }
 
     return password.value;
 }
+
+//COPY PASSWORD TO CLIPBOARD
+btnCopy.addEventListener("click", function() {
+    password.select();
+    password.setSelectionRange(0, 99999); //for mobile
+    navigator.clipboard.writeText(password.value);
+    alert("Copied the password " + password.value);
+ }
+)
 
 
