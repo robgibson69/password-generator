@@ -2,24 +2,42 @@
 var alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$%^&*_-+=";
+var pass_char = "";
+var password = "";
 
 // SET UP VARIABLES FOR THE DOCUMENT ELEMENTS
 // FOR SELECTION AND VALIDATION
-var lenght = document.getElementById("length");
+var length = document.getElementById("length");
 var includeNumbers = document.getElementById("numbers");
 var includeSymbols = document.getElementById("symbols");
 var btnGenerate = document.getElementById("generate-button");
 var butCopy = document.getElementById("copy");
 var password = document.getElementById("password-text");
 
-// LET THE MAGIC HAPPEN
-// GENERATE A PASSWORD
-function setPasswordText() {
-    password.value = alpha;
-}
-
-
+// EVENT LISTENER FOR GENERATE PASSWORD BUTTON
 btnGenerate.addEventListener('click', function() {
     console.log("alpha contains " + alpha);
     setPasswordText();
 })
+
+// PUT TOGETHER SELECTED PASSWORD_          *** Googled "javascript condidtional expressions"_
+// PASSWORD CHOICES FROM USER AND           *** for shorter ways to do if/then.
+// CALL THE GENERATE PASSWORD FUNCTION               
+function setPasswordText() {
+    pass_char = alpha;
+    includeNumbers.checked ? (pass_char += numbers): "";
+    includeSymbols.checked ? (pass_char += symbols): "";
+    password.value = generatePassword(length.value, pass_char);
+}
+
+function generatePassword(selectedLength, selectedCharacters) {
+    console.log(selectedLength + selectedCharacters  + password.value)
+    
+    for (let i = 0; i < selectedLength; i++) {
+    password.value += selectedCharacters.charAt(Math.floor(Math.random() * selectedLength));
+    }
+
+    return password.value;
+}
+
+
