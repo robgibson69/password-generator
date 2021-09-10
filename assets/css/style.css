@@ -17,8 +17,7 @@
     border: 2px solid gray;
     border-radius: 10px;
     max-width: 700px;
-    min-width: 376px;
-    /* height: 300px; */
+    min-width: 376px;700
     font-family: 'Rubik', sans-serif;
     font-size: 17px;
 }
@@ -96,3 +95,9 @@ input[type=text] {
     padding: 2px 4px 2px 4px;
 }
 
+@media screen and (max-width: 720px) {
+    .main {
+        margin: 10px
+    }
+    
+}

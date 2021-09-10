@@ -41,12 +41,14 @@ function generatePassword(length, characters) {
     return password.value;
 }
 
-//COPY PASSWORD TO CLIPBOARD
+//COPY PASSWORD TO CLIPBOARD IF PASSWORD FIELD IS NOT BLANK
 btnCopy.addEventListener("click", function() {
-    password.select();
-    password.setSelectionRange(0, 99999); //for mobile
-    navigator.clipboard.writeText(password.value);
-    alert("Copied the password " + password.value);
+    if (password.value !== "") {
+        password.select();
+        password.setSelectionRange(0, 99999); //for mobile
+        navigator.clipboard.writeText(password.value);
+        alert("Copied the password " + password.value);
+    }
  }
 )
 
@@ -60,8 +62,9 @@ length.addEventListener("keyup", function() {
     }
     else {
         length.style.backgroundColor="#FFF";
-        document.getElementById("generate-password").disabled = false;
+        document.getElementById("generate-button").disabled = false;
     }
  }
 )
+
 
