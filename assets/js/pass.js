@@ -14,6 +14,7 @@ var btnGenerate = document.getElementById("generate-button");
 var btnCopy = document.getElementById("copy");
 var password = document.getElementById("password-text");
 
+
 // EVENT LISTENER FOR GENERATE PASSWORD BUTTON
 btnGenerate.addEventListener('click', function() {
     password.value = ""
@@ -30,6 +31,7 @@ function setPasswordText() {
     password.value = generatePassword(length.value, pass_char);
 }
 
+// GENERATE PASSWORD BASED ON SELECTED CHARACTERS
 function generatePassword(length, characters) {
     
     for (var i = 0; i < length; i++) {
@@ -48,4 +50,18 @@ btnCopy.addEventListener("click", function() {
  }
 )
 
+//VALIDATE LENGTH INPUT
+length.addEventListener("keyup", function() {
+    let isnum = /^\d+$/.test(length.value);
+
+    if (isnum === false || length.value < 8 || length.value > 128) {
+        length.style.backgroundColor="#FF0000";
+        document.getElementById("generate-button").disabled = true;
+    }
+    else {
+        length.style.backgroundColor="#FFF";
+        document.getElementById("generate-password").disabled = false;
+    }
+ }
+)
 

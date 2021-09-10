@@ -64,16 +64,30 @@ h1 {
 
 /*  BUTTONS AND INPUT BOXES  */
 input[type=button] {
-    background-color: black;
+    background-color: #323633;
     color: white;
-    border: 1px solid black;
+    border: 1px solid #323633;
     border-radius: 8px;
     padding: 6px 22px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    box-shadow: 5px 5px 5px #999;
 }
 
+input[type=button]:hover:enabled {
+    background-color: black;
+}
+
+input[type=button]:active {
+    box-shadow: 3px 3px 3px;
+    transform: translateY(2px);
+}
+
+input[type=button]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 input[type=text] {
     border: 2px solid #ccc;
     border-radius: 4px;
